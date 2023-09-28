@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 17583b54cf800d84fad57b3b8d2ad4be
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hero_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 269
+        width: 22
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6335342, y: -0.0021163006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47b33583252de444888f61395c79a2c
+      internalID: 2121953932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 269
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6529166, y: -0.001276133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d2e73e3b9657846a0a477919e0a4a0
+      internalID: 1106788418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 269
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.627728, y: -0.0021163006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236f4965e95161f4cbfd6eefa7491155
+      internalID: 1012079394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 269
+        width: 26
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6412377, y: 0.01287219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eb3f4a1569ed044ba1504be7a83335
+      internalID: -875963255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 269
+        width: 33
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5778938, y: 0.01287219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d1e8919587ed942aed8ec9bb655d82
+      internalID: 2000659541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 269
+        width: 33
+        height: 49
+      alignment: 9
+      pivot: {x: 0.57789475, y: -0.009610546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d02638b34808a4abd64a93d71e2cd4
+      internalID: -951959441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 269
+        width: 28
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5918045, y: -0.009610546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338cd980f677b6f4d866207a7049604e
+      internalID: -271415530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 211
+        width: 22
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6245176, y: -0.0031517185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51cc3b1cd698aa34190caae5faa9cdca
+      internalID: -673660522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 212
+        width: 26
+        height: 47
+      alignment: 9
+      pivot: {x: 0.7634028, y: -0.0027056755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3789202f62c8024ca6f288cf1c6d73b
+      internalID: -1081007782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 213
+        width: 23
+        height: 47
+      alignment: 9
+      pivot: {x: 0.69354516, y: -0.009990935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b657ad39e21425b4f997d3d1c3237fe5
+      internalID: -90219882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 213
+        width: 23
+        height: 47
+      alignment: 9
+      pivot: {x: 0.6191048, y: -0.0027056755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9c0e668260e6f4995b76fa4796f73f
+      internalID: -1553172004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk5
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 212
+        width: 24
+        height: 48
+      alignment: 9
+      pivot: {x: 0.59987515, y: 0.0006335576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156004ca4c7c16f45ad666817753fd14
+      internalID: 1636921943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk6
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 212
+        width: 28
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5733773, y: 0.004579909}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3332d5dfb4bb494db10fec06491887f
+      internalID: 526392420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk7
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 212
+        width: 24
+        height: 48
+      alignment: 9
+      pivot: {x: 0.52853775, y: 0.014901161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dbbf88a10b33546b4034afe0349453
+      internalID: -1293050935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 212
+        width: 23
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5595531, y: -0.020767847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93eea4935c4ce849bc2d1552a3ba029
+      internalID: -1062990329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk9
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 212
+        width: 22
+        height: 48
+      alignment: 9
+      pivot: {x: 0.59338933, y: -0.020767847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23479c144a26ac48991040115bb3a27
+      internalID: -1839984426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 151
+        width: 26
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6329091, y: 0.0063361344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b350d6765e062bf47ac99659c9f17357
+      internalID: -1210565395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 151
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7032729, y: 0.0063361344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cd6543935e1334a88a3c81e907232f
+      internalID: -29037094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow3
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 151
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.65707445, y: -0.006486231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bde3f67841a7d046980a2311921ef0e
+      internalID: -100086678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow4
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 150
+        width: 40
+        height: 50
+      alignment: 9
+      pivot: {x: 0.790588, y: -0.0026397705}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e947d66e9db5604f9e03fbd84e9e1ac
+      internalID: 372547928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow5
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 150
+        width: 40
+        height: 50
+      alignment: 9
+      pivot: {x: 0.853418, y: 0.009926452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02222d7cbd3685c46a3473f31696a042
+      internalID: -1525993820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 150
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.88894653, y: 0.0036434936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ded4e074cecba46ba81bbf3be597ba
+      internalID: 680900568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 150
+        width: 32
+        height: 50
+      alignment: 9
+      pivot: {x: 0.8239651, y: -0.00892273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60da2aac23a59d4583e2a1df6eeac2e
+      internalID: -1488402437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bow8
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 150
+        width: 28
+        height: 50
+      alignment: 9
+      pivot: {x: 0.62341416, y: -0.00892273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a1446af4227e74e8bb667257102dcd
+      internalID: -108225029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 89
+        width: 30
+        height: 51
+      alignment: 9
+      pivot: {x: 0.7807483, y: 0.004561181}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c53fef4a59524649a856f32e81ac7a9
+      internalID: 1684344830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_25
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 89
+        width: 31
+        height: 50
+      alignment: 9
+      pivot: {x: 0.7499564, y: -0.005347595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e668749b43233184e81930f860b68828
+      internalID: 757413922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_26
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 89
+        width: 30
+        height: 43
+      alignment: 9
+      pivot: {x: 0.7254613, y: 0.0039048307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa1fcd4c27ce8347b297b0c7a251f05
+      internalID: -1306238581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_27
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 92
+        width: 30
+        height: 36
+      alignment: 9
+      pivot: {x: 0.68210346, y: -0.013068305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7ec8826f0ba35418ad8fd94feaf013
+      internalID: 887130770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_28
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 92
+        width: 31
+        height: 29
+      alignment: 9
+      pivot: {x: 0.7769313, y: -0.011324389}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85747c96076a6164893cb3867439f48a
+      internalID: -284444297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_29
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 89
+        width: 34
+        height: 36
+      alignment: 9
+      pivot: {x: 0.79840446, y: -0.013068517}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247ad53393618204f829e88bc0b539d0
+      internalID: -1365110428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_30
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 17
+        width: 39
+        height: 50
+      alignment: 9
+      pivot: {x: 0.7750925, y: 0.003802185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b8eb99572be4e48a58d6566d6ad772
+      internalID: -1830643003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_31
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 17
+        width: 46
+        height: 50
+      alignment: 9
+      pivot: {x: 0.820692, y: -0.016313935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a59d09ceea48f248a0cad2b50909777
+      internalID: 1529072761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_33
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 16
+        width: 34
+        height: 50
+      alignment: 9
+      pivot: {x: 0.7070779, y: 0.010507698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c0eab7dbd51e648b96f16f44a7f50d
+      internalID: -1168361142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_35
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 19
+        width: 25
+        height: 50
+      alignment: 9
+      pivot: {x: 0.66092956, y: 0.010507775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad2414393327da4fb566b32d21f208f
+      internalID: -1117136535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 24
+        width: 25
+        height: 48
+      alignment: 9
+      pivot: {x: 0.7279834, y: -0.0029029846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c12831d41e531c4ba85792efcf1a376
+      internalID: 545703732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hero_39
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 28
+        width: 22
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6981146, y: -0.006324184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9bf237a0abced498da4d8ab6871a57
+      internalID: 1799676841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bow1: -1210565395
+      bow2: -29037094
+      bow3: -100086678
+      bow4: 372547928
+      bow5: -1525993820
+      bow6: 680900568
+      bow7: -1488402437
+      bow8: -108225029
+      hero_0: 2121953932
+      hero_1: 1106788418
+      hero_2: 1012079394
+      hero_24: 1684344830
+      hero_25: 757413922
+      hero_26: -1306238581
+      hero_27: 887130770
+      hero_28: -284444297
+      hero_29: -1365110428
+      hero_3: -875963255
+      hero_30: -1830643003
+      hero_31: 1529072761
+      hero_32: 757544429
+      hero_33: -1168361142
+      hero_34: 1968544243
+      hero_35: -1117136535
+      hero_36: -107418947
+      hero_37: 545703732
+      hero_38: 882221095
+      hero_39: 1799676841
+      hero_4: 2000659541
+      hero_5: -951959441
+      hero_6: -271415530
+      walk1: -673660522
+      walk2: -1081007782
+      walk3: -90219882
+      walk4: -1553172004
+      walk5: 1636921943
+      walk6: 526392420
+      walk7: -1293050935
+      walk8: -1062990329
+      walk9: -1839984426
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
