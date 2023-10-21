@@ -30,7 +30,6 @@ public abstract class State : MonoBehaviour
             foreach(var transition in _transitions)
             {
                 transition.enabled = false;
-
                 enabled = false;
             }
         }
