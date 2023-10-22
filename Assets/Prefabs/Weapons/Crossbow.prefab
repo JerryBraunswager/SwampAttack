@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _label: "\u0410\u0440\u0431\u0430\u043B\u0435\u0442"
+  _workLabel: Bow
   _price: 150
   _icon: {fileID: 21300000, guid: 85c1fb39f04005f47b3b3fd3dbc15bc0, type: 3}
   _isBuyed: 0

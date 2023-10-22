@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private int _currentWeaponIndex;
     private int _currentHealth;
     private float _timeBeforeAttack;
+    private Animator _animator;
 
     public int Money { get; private set; }
     public int CurrentWeaponIndex => _currentWeaponIndex;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         _currentWeapon = _weapons[0];
         _weapons[0].Buy();
         _currentHealth = (int)_attributes[0].Value;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) & _currentWeapon.AttackDelay <= _timeBeforeAttack)
         {
+            _animator.Play(_currentWeapon.WorkLabel);
             _currentWeapon.Shoot(_shootPoint);
             _timeBeforeAttack = 0;
         }

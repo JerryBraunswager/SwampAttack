@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private string _label;
+    [SerializeField] private string _workLabel;
     [SerializeField] private int _price;
     [SerializeField] private Sprite _icon;
     [SerializeField] private bool _isBuyed;
@@ -12,7 +13,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected List<Attribute> _attributes;
     [SerializeField] protected Bullet Bullet;
 
-    protected Animator Animator;
+    protected int MinChance = 0;
+    protected int MaxChance = 101;
 
     public Sprite Icon => _icon;
     public int Price => _price;
@@ -20,11 +22,9 @@ public abstract class Weapon : MonoBehaviour
     public string Label => _label;
     public float AttackDelay => _attributes[0].Value;
     public int Damage => (int)_attributes[1].Value;
-
-    private void Start()
-    {
-        Animator = FindObjectOfType<Player>().GetComponent<Animator>();
-    }
+    public float CritChance => _attributes[2].Value;
+    public float CritDamage => _attributes[3].Value;
+    public string WorkLabel => _workLabel;
 
     public void AddLevelAttribute(int index)
     {
