@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,13 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private Sprite _icon;
     [SerializeField] private bool _isBuyed;
 
-    [SerializeField] protected List<Attribute> _attributes;
+    [SerializeField] protected List<Attribute> _startAttributes;
     [SerializeField] protected Bullet Bullet;
 
     protected int MinChance = 0;
     protected int MaxChance = 101;
+
+    private List<Attribute> _attributes;
 
     public Sprite Icon => _icon;
     public int Price => _price;
@@ -38,10 +41,11 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract int DealDamage();
 
-    public void ShowAttributes(int index, out string name, out float value)
+    public void ShowAttributes(int index, out string name, out float value, out float increaseValue)
     {
         name = _attributes[index].Name;
         value = _attributes[index].Value;
+        increaseValue = _attributes[index].ValueIncrease;
     }
 
     public int GetAttributesCount()
@@ -51,15 +55,19 @@ public abstract class Weapon : MonoBehaviour
 
     public void Buy()
     {
+        _attributes = SetStartValue(_startAttributes);
         _isBuyed = true;
     }
-}
 
-[System.Serializable]
-public class Attribute
-{
-    public string Name;
-    public string NameEnum;
-    public float Value;
-    public float ValueIncrease;
+    private List<Attribute> SetStartValue(List<Attribute> startValues)
+    {
+        List<Attribute> result = new List<Attribute>();
+
+        foreach(Attribute attribute in startValues)
+        {
+            result.Add(new Attribute(attribute.Name, attribute.NameEnum, attribute.Value, attribute.ValueIncrease));
+        }
+
+        return result;
+    }
 }

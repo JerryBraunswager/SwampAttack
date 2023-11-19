@@ -191,7 +191,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 70
   _reward: 15
-  _target: {fileID: 0}
+  _damage: 6
+  _delay: 1.5
+  _startAttributes:
+  - Name: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+    NameEnum: Health
+    Value: 70
+    ValueIncrease: 7
+  - Name: "\u041D\u0430\u0433\u0440\u0430\u0434\u0430"
+    NameEnum: Reward
+    Value: 15
+    ValueIncrease: 3
+  - Name: "\u0423\u0440\u043E\u043D"
+    NameEnum: Damage
+    Value: 6
+    ValueIncrease: 1
+  - Name: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0430\u0442\u0430\u043A\u0438"
+    NameEnum: AttackDelay
+    Value: 1.5
+    ValueIncrease: 0.01
 --- !u!114 &7484750797054356048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,8 +254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 8984583008691266164}
-  _damage: 6
-  _delay: 1.5
 --- !u!114 &1003981957491444815
 MonoBehaviour:
   m_ObjectHideFlags: 0

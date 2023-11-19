@@ -9,14 +9,17 @@ public class UpgradeView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _label;
     [SerializeField] private TMP_Text _count;
+    [SerializeField] private TMP_Text _increaseLabel;
     [SerializeField] private TMP_Text _price;
     [SerializeField] private Button _sellButton;
 
     private string _name;
     private float _value;
+    private float _increaseValue;
     private int _index;
     private Weapon _weapon;
 
+    public string Name => _name;
     public event UnityAction<int,Weapon, UpgradeView> SellButtonClicked;
 
     private void OnEnable()
@@ -33,6 +36,14 @@ public class UpgradeView : MonoBehaviour
     {
         _label.text = _name;
         _count.text = _value.ToString();
+        if (_increaseValue == 0)
+        {
+            _increaseLabel.text = "";
+        }
+        else
+        {
+            _increaseLabel.text = _increaseValue.ToString();
+        }
         _price.text = price.ToString();
     }
 
@@ -41,11 +52,12 @@ public class UpgradeView : MonoBehaviour
         SellButtonClicked?.Invoke(_index, _weapon, this);
     }
 
-    public void Init(int index, string name, float value, Weapon weapon = null)
+    public void Init(int index, string name, float value, float increaseValue = 0, Weapon weapon = null)
     {
         _index = index;
         _name = name;
         _value = value;
+        _increaseValue = increaseValue;
         _weapon = weapon;
     }
 }

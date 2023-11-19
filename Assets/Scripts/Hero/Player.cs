@@ -10,12 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Attribute> _attributes;
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private Menu _menu;
 
     private Weapon _currentWeapon;
     private int _currentWeaponIndex;
     private int _currentHealth;
     private float _timeBeforeAttack;
     private Animator _animator;
+    private bool isWork = true;
 
     public int Money { get; private set; }
     public int CurrentWeaponIndex => _currentWeaponIndex;
@@ -41,6 +43,16 @@ public class Player : MonoBehaviour
             _currentWeapon.Shoot(_shootPoint);
             _timeBeforeAttack = 0;
         }
+    }
+
+    private void OnEnable()
+    {
+        _menu.TimeStopped += _menu_TimeStopped;
+    }
+
+    private void OnDisable()
+    {
+        _menu.TimeStopped -= _menu_TimeStopped;
     }
 
     public void ApplyDamage(int damage)
@@ -94,10 +106,11 @@ public class Player : MonoBehaviour
         _attributes[index].Value = cur;
     }
 
-    public void ShowAttributes(int index, out string name, out float value)
+    public void ShowAttributes(int index, out string name, out float value, out float increaseValue)
     {
         value = _attributes[index].Value;
         name = _attributes[index].Name;
+        increaseValue = _attributes[index].ValueIncrease;
     }
 
     public int GetAttributesCount()
@@ -153,5 +166,10 @@ public class Player : MonoBehaviour
             _currentWeaponIndex = 0;
         }
 
+    }
+
+    private void _menu_TimeStopped(bool arg0)
+    {
+        isWork = arg0;
     }
 }
