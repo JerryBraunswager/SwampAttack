@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class MoveState : State
 {
-    [SerializeField] private float _speed;
     private Enemy _enemy;
 
     private void Start()
@@ -15,6 +14,6 @@ public class MoveState : State
 
     public void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, _speed * Time.deltaTime);
+        _enemy.Move();
     }
 }

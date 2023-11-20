@@ -9,6 +9,7 @@ public class WeaponShop : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private WeaponView _weaponTemplate;
     [SerializeField] private GameObject _weaponContainer;
+    [SerializeField] private StartMenu _startMenu;
 
     private List<WeaponView> _templates = new List<WeaponView>();
 
@@ -20,6 +21,16 @@ public class WeaponShop : MonoBehaviour
         {
             AddItem(_weapons[i]);
         }
+    }
+
+    private void OnEnable()
+    {
+        _startMenu.GameStarted += _menu_TimeStopped;
+    }
+
+    private void OnDisable()
+    {
+        _startMenu.GameStarted -= _menu_TimeStopped;
     }
 
     private void OnApplicationQuit()
@@ -67,5 +78,20 @@ public class WeaponShop : MonoBehaviour
     private void SellUpgrades(Weapon weapon)
     {
         WeaponChoosed?.Invoke(weapon);
+    }
+
+    private void _menu_TimeStopped()
+    {
+        SetStartWeaponsValues();
+    }
+
+    private void SetStartWeaponsValues()
+    {
+        _weapons[0].Buy();
+
+        for(int i = 1; i < _weapons.Count; i++)
+        {
+            _weapons[i].SetStartValue();
+        }
     }
 }

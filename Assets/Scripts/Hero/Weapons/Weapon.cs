@@ -55,19 +55,19 @@ public abstract class Weapon : MonoBehaviour
 
     public void Buy()
     {
-        _attributes = SetStartValue(_startAttributes);
+        SetStartValue();
         _isBuyed = true;
     }
 
-    private List<Attribute> SetStartValue(List<Attribute> startValues)
+    public void SetStartValue()
     {
         List<Attribute> result = new List<Attribute>();
 
-        foreach(Attribute attribute in startValues)
+        foreach(Attribute attribute in _startAttributes)
         {
             result.Add(new Attribute(attribute.Name, attribute.NameEnum, attribute.Value, attribute.ValueIncrease));
         }
 
-        return result;
+        _attributes = result;
     }
 }

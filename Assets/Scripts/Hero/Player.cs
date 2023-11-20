@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private int _currentHealth;
     private float _timeBeforeAttack;
     private Animator _animator;
-    private bool isWork = true;
+    private bool _isStop;
 
     public int Money { get; private set; }
     public int CurrentWeaponIndex => _currentWeaponIndex;
@@ -35,13 +35,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _timeBeforeAttack += Time.deltaTime;
-
-        if (Input.GetMouseButtonDown(0) & _currentWeapon.AttackDelay <= _timeBeforeAttack)
+        if (_isStop == false)
         {
-            _animator.Play(_currentWeapon.WorkLabel);
-            _currentWeapon.Shoot(_shootPoint);
-            _timeBeforeAttack = 0;
+            _timeBeforeAttack += Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(0) & _currentWeapon.AttackDelay <= _timeBeforeAttack)
+            {
+                _animator.Play(_currentWeapon.WorkLabel);
+                _currentWeapon.Shoot(_shootPoint);
+                _timeBeforeAttack = 0;
+            }
         }
     }
 
@@ -170,6 +173,6 @@ public class Player : MonoBehaviour
 
     private void _menu_TimeStopped(bool arg0)
     {
-        isWork = arg0;
+        _isStop = arg0;
     }
 }
