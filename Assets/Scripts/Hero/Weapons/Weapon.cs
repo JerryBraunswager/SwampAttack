@@ -10,8 +10,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private Sprite _icon;
     [SerializeField] private bool _isBuyed;
+    [SerializeField] private List<Attribute> _startAttributes;
 
-    [SerializeField] protected List<Attribute> _startAttributes;
     [SerializeField] protected Bullet Bullet;
 
     protected int MinChance = 0;
@@ -29,6 +29,10 @@ public abstract class Weapon : MonoBehaviour
     public float CritDamage => _attributes[3].Value;
     public string WorkLabel => _workLabel;
 
+    public abstract void Shoot(Transform shootPoint, Menu menu);
+
+    public abstract int DealDamage();
+
     public void AddLevelAttribute(int index)
     {
         float currrentValue = _attributes[index].Value;
@@ -36,10 +40,6 @@ public abstract class Weapon : MonoBehaviour
         currrentValue += increaseValue;
         _attributes[index].Value = currrentValue;
     }
-
-    public abstract void Shoot(Transform shootPoint);
-
-    public abstract int DealDamage();
 
     public void ShowAttributes(int index, out string name, out float value, out float increaseValue)
     {
@@ -61,6 +61,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void SetStartValue()
     {
+        _isBuyed = false;
         List<Attribute> result = new List<Attribute>();
 
         foreach(Attribute attribute in _startAttributes)

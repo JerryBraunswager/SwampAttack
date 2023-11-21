@@ -82,7 +82,6 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\AttackState.cs" />
     <Compile Include="Assets\Scripts\Hero\Weapons\Boomerang.cs" />
-    <Compile Include="Assets\Scripts\Hero\PlayerAttribute.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\UpgradeShop.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine\Transition.cs" />
     <Compile Include="Assets\Scripts\Hero\Weapons\Bullet.cs" />
@@ -90,7 +89,6 @@
     <Compile Include="Assets\Scripts\UI\Shop\UpgradeView.cs" />
     <Compile Include="Assets\Scripts\UI\Shop\WeaponShop.cs" />
     <Compile Include="Assets\Scripts\Hero\Player.cs" />
-    <Compile Include="Assets\Scripts\Hero\Weapons\WeaponAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

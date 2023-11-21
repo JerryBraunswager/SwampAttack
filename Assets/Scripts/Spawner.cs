@@ -11,9 +11,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private List<Wave> _waves;
     [SerializeField] private Menu _menu;
+    [SerializeField] private StartMenu _startMenu;
 
     private Wave _currentWave;
     private int _currentWaveIndex = 0;
+    private int _barMaxValue = 1;
     private float _timeAfterLastSpawn;
     private int _spawned;
     private int _killed;
@@ -64,26 +66,29 @@ public class Spawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _menu.TimeStopped += _menu_TimeStopped;
+        _menu.TimeStopped += StopTime;
+        _startMenu.GameStarted += StartGame;
     }
 
     private void OnDisable()
     {
-        _menu.TimeStopped -= _menu_TimeStopped;
+        _menu.TimeStopped -= StopTime;
+        _startMenu.GameStarted -= StartGame;
     }
 
     public void NextWave()
     {
-        _killed = 0;
-        _spawned = 0;
-        EnemySpawned?.Invoke(_spawned, 1);
-        EnemyKilled?.Invoke(_killed, 1);
         SetWave(++_currentWaveIndex);
     }
 
     private void SetWave(int index)
     {
+        _killed = 0;
+        _spawned = 0;
+        EnemySpawned?.Invoke(_spawned, _barMaxValue);
+        EnemyKilled?.Invoke(_killed, _barMaxValue);
         _currentWave = _waves[index];
+        _currentWave.IsWork = true;
     }
 
     private void InstantiateEnemy()
@@ -102,9 +107,28 @@ public class Spawner : MonoBehaviour
         _player.AddMoney(enemy.Reward);
     }
 
-    private void _menu_TimeStopped(bool arg0)
+    private void StopTime(bool isStop)
     {
-       _isStop = arg0;
+       _isStop = isStop;
+    }
+
+    private void StartGame()
+    {
+        var children = new List<GameObject>();
+
+        foreach (Transform child in transform)
+        { 
+            children.Add(child.gameObject); 
+        }
+
+        foreach (var child in children)
+        {
+            Destroy(child);
+        }
+
+        _timeAfterLastSpawn = 0;
+        _currentWaveIndex = 0;
+        SetWave(_currentWaveIndex);
     }
 }
 

@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,8 +82,7 @@ public class UpgradeShop : MonoBehaviour
         {
             weapon.AddLevelAttribute(index);
             weapon.ShowAttributes(index, out string name, out float value, out float increaseValue);
-            upgradeView.Init(index, name, value, increaseValue);
-            Sell(upgradeView);
+            SellUpgradeView(upgradeView, index, name, value, increaseValue);
         }
         else
         {
@@ -99,8 +99,7 @@ public class UpgradeShop : MonoBehaviour
             {
                 _player.AddLevelAttribute(index);
                 _player.ShowAttributes(index, out string name, out float value, out float increaseValue);
-                upgradeView.Init(index, name, value, increaseValue);
-                Sell(upgradeView);
+                SellUpgradeView(upgradeView, index, name, value, increaseValue);
             }
         }
     }
@@ -108,20 +107,22 @@ public class UpgradeShop : MonoBehaviour
     private void ShowPlayerUpgrades()
     {
         int count = _player.GetAttributesCount();
-        var healTemplate = Instantiate(_upgradeView, _playerContainer.transform);
-        healTemplate.SellButtonClicked += SellUpgradeButtonClicked;
-        _playerUpgrades.Add(healTemplate);
-        _playerUpgrades[0].Init(-1, "Лечение", _healValue);
-        _playerUpgrades[0].Render(_currentPrice);
 
-        for (int i = 0; i < count; i++)
+        for (int i = -1; i < count; i++)
         {
             var template = Instantiate(_upgradeView, _playerContainer.transform);
             template.SellButtonClicked += SellUpgradeButtonClicked;
             _playerUpgrades.Add(template);
-            _player.ShowAttributes(i, out string name, out float value, out float increaseValue);
-            _playerUpgrades[i + 1].Init(i, name, value, increaseValue);
-            _playerUpgrades[i + 1].Render(_currentPrice);
+
+            if (i == -1)
+            {
+                RenderUpgradeView(0, "Лечение", -1, _healValue);
+            }
+            else
+            {
+                _player.ShowAttributes(i, out string name, out float value, out float increaseValue);
+                RenderUpgradeView(i + 1, name, i, value, increaseValue);
+            }
         }
     }
 
@@ -130,5 +131,17 @@ public class UpgradeShop : MonoBehaviour
         _player.RemoveMoney(_currentPrice);
         _currentPrice += _priceIncrease;
         upgradeView.Render(_currentPrice);
+    }
+
+    private void SellUpgradeView(UpgradeView upgradeView, int index, string name, float value, float increaseValue)
+    {
+        upgradeView.Init(index, name, value, increaseValue);
+        Sell(upgradeView);
+    }
+
+    private void RenderUpgradeView(int listIndex, string name, int index, float value, float increaseValue = 0)
+    {
+        _playerUpgrades[listIndex].Init(index, name, value, increaseValue);
+        _playerUpgrades[listIndex].Render(_currentPrice);
     }
 }

@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     private Player _target;
     private Animator _animator;
     private Menu _menu;
+    private int _healthIndex = 0;
+    private int _damageIndex = 2;
+    private int _attackSpeedIndex = 3;
 
     public int Reward => (int)_attributes[1].Value;
     public event UnityAction<Enemy> Dying;
@@ -32,21 +35,16 @@ public class Enemy : MonoBehaviour
     {
         _target = target;
         _menu = menu;
-        _menu.TimeStopped += _menu_TimeStopped;
-    }
-
-    private void _menu_TimeStopped(bool arg0)
-    {
-        _isStop = arg0;
+        _menu.TimeStopped += StopTime;
     }
 
     public void TakeDamage(int damage)
     {
-        _attributes[0].Value -= damage;
+        _attributes[_healthIndex].Value -= damage;
 
-        if(_attributes[0].Value <= 0)
+        if(_attributes[_healthIndex].Value <= 0)
         {
-            _menu.TimeStopped -= _menu_TimeStopped;
+            _menu.TimeStopped -= StopTime;
             Dying?.Invoke(this);
             Destroy(gameObject);
         }
@@ -57,8 +55,8 @@ public class Enemy : MonoBehaviour
         if (_isStop == false & _lastAttackTime <= 0)
         {
             _animator.Play("Attack");
-            _target.ApplyDamage((int)_attributes[2].Value);
-            _lastAttackTime = _attributes[3].Value;
+            _target.ApplyDamage((int)_attributes[_damageIndex].Value);
+            _lastAttackTime = _attributes[_attackSpeedIndex].Value;
         }
 
         _lastAttackTime -= Time.deltaTime;
@@ -82,5 +80,10 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, Target.transform.position, _attributes[4].Value * Time.deltaTime);
         }
+    }
+
+    private void StopTime(bool stop)
+    {
+        _isStop = stop;
     }
 }

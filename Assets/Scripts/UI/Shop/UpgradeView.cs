@@ -36,6 +36,7 @@ public class UpgradeView : MonoBehaviour
     {
         _label.text = _name;
         _count.text = _value.ToString();
+
         if (_increaseValue == 0)
         {
             _increaseLabel.text = "";
@@ -44,6 +45,7 @@ public class UpgradeView : MonoBehaviour
         {
             _increaseLabel.text = _increaseValue.ToString();
         }
+
         _price.text = price.ToString();
     }
 

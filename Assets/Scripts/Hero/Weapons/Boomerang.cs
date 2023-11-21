@@ -17,8 +17,9 @@ public class Boomerang : Weapon
         return Damage;
     }
 
-    public override void Shoot(Transform shootPoint)
+    public override void Shoot(Transform shootPoint, Menu menu)
     {
-        Instantiate(Bullet, shootPoint.position, Quaternion.identity);
+        var bullet = Instantiate(Bullet, shootPoint.position, Quaternion.identity);
+        bullet.Init(menu);
     }
 }

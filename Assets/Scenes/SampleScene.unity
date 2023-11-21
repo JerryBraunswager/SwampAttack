@@ -478,10 +478,10 @@ RectTransform:
   m_Children:
   - {fileID: 972996944}
   - {fileID: 435504804}
+  - {fileID: 528819050}
   - {fileID: 557556964}
   - {fileID: 40398995}
   - {fileID: 1212431058}
-  - {fileID: 528819050}
   - {fileID: 1562679881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3426,6 +3426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557556964}
   - component: {fileID: 557556965}
+  - component: {fileID: 557556966}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -3465,6 +3466,25 @@ MonoBehaviour:
   _button: {fileID: 250740688}
   _container: {fileID: 1245141480}
   _menu: {fileID: 37700545}
+--- !u!114 &557556966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557556963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e082fabd1412be4c8221ec512dfaab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapons:
+  - {fileID: 2986917195121265320, guid: 070e1492c5e56e74bbda84c594cc83aa, type: 3}
+  - {fileID: 4231071928330327988, guid: a8e8e3c86bb4f6144beaa083eac0260f, type: 3}
+  _player: {fileID: 604467282}
+  _weaponTemplate: {fileID: 8218675733849107648, guid: 39e320507bd0e8e449e228b4e462725f, type: 3}
+  _weaponContainer: {fileID: 47317483}
+  _startMenu: {fileID: 1562679884}
 --- !u!1 &582377431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3707,6 +3727,7 @@ MonoBehaviour:
     Count: 13
     IsWork: 1
   _menu: {fileID: 37700545}
+  _startMenu: {fileID: 1562679884}
 --- !u!1 &621700007
 GameObject:
   m_ObjectHideFlags: 0
@@ -6270,13 +6291,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 604467282}
-  _weaponShop: {fileID: 1496322874}
+  _weaponShop: {fileID: 557556966}
   _upgradeView: {fileID: 4082171140087801968, guid: 07ae5ded8d331814bbe66a587113e0fc, type: 3}
   _weaponContainer: {fileID: 802277584}
   _playerContainer: {fileID: 813340496}
   _startPrice: 60
   _priceIncrease: 5
-  _healValue: 0
+  _healValue: 15
 --- !u!1 &1158835652
 GameObject:
   m_ObjectHideFlags: 0
@@ -7707,7 +7728,6 @@ GameObject:
   - component: {fileID: 1496322873}
   - component: {fileID: 1496322872}
   - component: {fileID: 1496322871}
-  - component: {fileID: 1496322874}
   m_Layer: 5
   m_Name: Weapons
   m_TagString: Untagged
@@ -7805,25 +7825,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496322869}
   m_CullTransparentMesh: 1
---- !u!114 &1496322874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496322869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e082fabd1412be4c8221ec512dfaab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 2986917195121265320, guid: 070e1492c5e56e74bbda84c594cc83aa, type: 3}
-  - {fileID: 4231071928330327988, guid: a8e8e3c86bb4f6144beaa083eac0260f, type: 3}
-  _player: {fileID: 604467282}
-  _weaponTemplate: {fileID: 8218675733849107648, guid: 39e320507bd0e8e449e228b4e462725f, type: 3}
-  _weaponContainer: {fileID: 47317483}
-  _startMenu: {fileID: 0}
 --- !u!114 &1523694972 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2201036102583133841, guid: 29d30b8b09fce9649b1e56dd63040ac2, type: 3}
@@ -10096,6 +10097,30 @@ PrefabInstance:
       propertyPath: _menu
       value: 
       objectReference: {fileID: 37700545}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startMenu
+      value: 
+      objectReference: {fileID: 1562679884}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startAttributes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startAttributes.Array.data[0].Name
+      value: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startAttributes.Array.data[0].Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startAttributes.Array.data[0].NameEnum
+      value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474708736704122112, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
+      propertyPath: _startAttributes.Array.data[0].ValueIncrease
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7854641436873438989, guid: d5c74a0690f508d41a4af5fd1f41dd00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.92

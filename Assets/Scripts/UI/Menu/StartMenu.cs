@@ -38,6 +38,6 @@ public class StartMenu : MonoBehaviour
 
     public void OnShopButtonClick()
     {
-
+        //нереализованно
     }
 }

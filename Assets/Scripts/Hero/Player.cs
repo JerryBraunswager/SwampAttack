@@ -7,17 +7,20 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private List<Attribute> _attributes;
+    [SerializeField] private List<Attribute> _startAttributes;
     [SerializeField] private List<Weapon> _weapons;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private Menu _menu;
+    [SerializeField] private StartMenu _startMenu;
 
+    private List<Attribute> _attributes;
     private Weapon _currentWeapon;
     private int _currentWeaponIndex;
     private int _currentHealth;
     private float _timeBeforeAttack;
     private Animator _animator;
     private bool _isStop;
+    private int _healthIndex = 0;
 
     public int Money { get; private set; }
     public int CurrentWeaponIndex => _currentWeaponIndex;
@@ -28,9 +31,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _currentWeapon = _weapons[0];
-        _weapons[0].Buy();
-        _currentHealth = (int)_attributes[0].Value;
+        StartNewGame();
     }
 
     private void Update()
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0) & _currentWeapon.AttackDelay <= _timeBeforeAttack)
             {
                 _animator.Play(_currentWeapon.WorkLabel);
-                _currentWeapon.Shoot(_shootPoint);
+                _currentWeapon.Shoot(_shootPoint, _menu);
                 _timeBeforeAttack = 0;
             }
         }
@@ -50,18 +51,20 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        _menu.TimeStopped += _menu_TimeStopped;
+        _menu.TimeStopped += TimeStop;
+        _startMenu.GameStarted += StartGame;
     }
 
     private void OnDisable()
     {
-        _menu.TimeStopped -= _menu_TimeStopped;
+        _menu.TimeStopped -= TimeStop;
+        _startMenu.GameStarted -= StartGame;
     }
 
     public void ApplyDamage(int damage)
     {
         _currentHealth -= damage;
-        HealthChanged?.Invoke(_currentHealth, (int)_attributes[0].Value);
+        HealthChanged?.Invoke(_currentHealth, (int)_attributes[_healthIndex].Value);
 
         if (_currentHealth <= 0)
         {
@@ -83,9 +86,8 @@ public class Player : MonoBehaviour
 
     public void BuyWeapon(Weapon weapon)
     {
-        Money -= weapon.Price;
+        RemoveMoney(weapon.Price);
         _weapons.Add(weapon);
-        MoneyChanged?.Invoke();
         WeaponChanged?.Invoke();
     }
 
@@ -93,12 +95,12 @@ public class Player : MonoBehaviour
     {
         _currentHealth += count;
 
-        if(_currentHealth > _attributes[0].Value)
+        if(_currentHealth > _attributes[_healthIndex].Value)
         {
-            _currentHealth = (int)_attributes[0].Value;
+            _currentHealth = (int)_attributes[_healthIndex].Value;
         }
 
-        HealthChanged?.Invoke(_currentHealth, (int)_attributes[0].Value);
+        HealthChanged?.Invoke(_currentHealth, (int)_attributes[_healthIndex].Value);
     }
 
     public void AddLevelAttribute(int index)
@@ -107,6 +109,7 @@ public class Player : MonoBehaviour
         float increase = _attributes[index].ValueIncrease;
         cur += increase;
         _attributes[index].Value = cur;
+        HealthChanged?.Invoke(_currentHealth, (int)_attributes[_healthIndex].Value);
     }
 
     public void ShowAttributes(int index, out string name, out float value, out float increaseValue)
@@ -123,7 +126,7 @@ public class Player : MonoBehaviour
 
     public bool IsFullHealth()
     {
-        return _currentHealth == _attributes[0].Value;
+        return _currentHealth == _attributes[_healthIndex].Value;
     }
 
     public List<Sprite> GetWeaponsIcons()
@@ -150,6 +153,18 @@ public class Player : MonoBehaviour
         ChangeWeapon();
     }
 
+    private void SetStartValue()
+    {
+        List<Attribute> result = new List<Attribute>();
+
+        foreach (Attribute attribute in _startAttributes)
+        {
+            result.Add(new Attribute(attribute.Name, attribute.NameEnum, attribute.Value, attribute.ValueIncrease));
+        }
+
+        _attributes = result;
+    }
+
     private void ChangeWeapon()
     {
         NormalizeNumber();
@@ -171,8 +186,23 @@ public class Player : MonoBehaviour
 
     }
 
-    private void _menu_TimeStopped(bool arg0)
+    private void TimeStop(bool stop)
     {
-        _isStop = arg0;
+        _isStop = stop;
+    }
+
+    private void StartNewGame()
+    {
+        SetStartValue();
+        Money = 0;
+        _currentWeapon = _weapons[0];
+        _weapons[0].Buy();
+        Heal((int)_attributes[0].Value);
+    }
+
+    private void StartGame()
+    {
+        _weapons.RemoveRange(1, _weapons.Count - 1);
+        StartNewGame();   
     }
 }

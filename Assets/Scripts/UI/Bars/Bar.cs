@@ -7,6 +7,7 @@ public class Bar : MonoBehaviour
 {
     [SerializeField] protected Slider Slider;
 
+
     protected void OnValueChanged(int value, int maxValue)
     {
         Slider.value = (float)value / maxValue;

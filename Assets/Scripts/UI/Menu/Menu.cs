@@ -11,14 +11,12 @@ public class Menu : MonoBehaviour
     {
         panel.SetActive(true);
         TimeStopped?.Invoke(true);
-        //Time.timeScale = 0;
     }
 
     public void ClosePanel(GameObject panel)
     {
         panel.SetActive(false);
         TimeStopped?.Invoke(false);
-        //Time.timeScale = 1;
     }
 
     public void Exit()
